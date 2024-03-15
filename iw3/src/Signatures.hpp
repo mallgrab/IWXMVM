@@ -72,7 +72,9 @@ namespace IWXMVM::IW3::Signatures
 
         Sig("55 8B 6C 24 38 85 ED", GAType::Code, -5) > R_AddCmdDrawTextWithEffects;
         Sig("E8 ?? ?? ?? ?? 85 C0 74 35", GAType::Code, -6) > IN_Frame;
-
+        Sig("51 08 53 8B 5C", GAType::Code, -5) > R_SetupMaterial;
+        Sig("A1 ?? ?? ?? ?? C3 A1 ?? ?? ?? ?? 80 78 0C 00", GAType::Code, -5) > Material_RegisterHandle;
+        Sig("E8 ?? ?? ?? ?? 8B 0D ?? ?? ?? ?? 33 C0 A3", GAType::Data, -4, Lambda::DereferenceAddress) > rgp;
 
         // cod4x
         using MType = Types::ModuleType;
